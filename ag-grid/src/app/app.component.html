@@ -7,7 +7,7 @@
             <h5>Static Data</h5>
           </div>
           <div class="row">
-            <ag-grid-angular style="height: 300px;" class="ag-theme-alpine" [rowData]="rowData"
+            <ag-grid-angular style="height: 330px;" class="ag-theme-alpine" [rowData]="rowData"
               [columnDefs]="columnDefs">
             </ag-grid-angular>
           </div>
@@ -43,6 +43,22 @@
           <div class="row">
             <ag-grid-angular #agGridForLargeDataSet style="height: 300px;" class="ag-theme-alpine"
               [rowData]="largeAmountRowDatas | async" [columnDefs]="columnDefinations" rowSelection="multiple">
+            </ag-grid-angular>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="row">
+            <h5>Grouping Data Set</h5>
+          </div>
+          <button class="btn btn-primary btn-sm" (click)="getSelectedGroupRowsForLargeAmountOfData()">Get Selected
+            Rows</button>
+          <div class="row">
+            <ag-grid-angular #agGridForGroupedDataSet style="height: 300px;" class="ag-theme-alpine"
+            [defaultColDef]="defaultGroupingColDef"
+            [autoGroupColumnDef]="autoGroupColumnDef"
+            [rowData]="groupingRowDatas | async" [columnDefs]="groupingColumnDefs"
+             rowSelection="multiple">
             </ag-grid-angular>
           </div>
         </div>
