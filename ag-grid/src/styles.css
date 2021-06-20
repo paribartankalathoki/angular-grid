@@ -1,0 +1,9 @@
+@import "../node_modules/ag-grid-community/dist/styles/ag-grid.css";
+@import "../node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css";
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}

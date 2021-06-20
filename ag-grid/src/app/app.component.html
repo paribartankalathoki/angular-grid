@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="row">
+            <h5>Static Data</h5>
+          </div>
+          <div class="row">
+            <ag-grid-angular style="height: 300px;" class="ag-theme-alpine" [rowData]="rowData"
+              [columnDefs]="columnDefs">
+            </ag-grid-angular>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="row">
+            <h5>Fetch Remote Data</h5>
+          </div>
+          <button class="btn btn-primary btn-sm" (click)="getSelectedRows()">Get Selected Rows</button>
+          <div class="row">
+            <ag-grid-angular #agGrid style="height: 300px;" class="ag-theme-alpine" [rowData]="rowDatas | async"
+              [columnDefs]="columnDefinations" rowSelection="multiple">
+            </ag-grid-angular>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="row">
+            <h5>Large Amount of Dataset Fetched from Server</h5>
+          </div>
+          <button class="btn btn-primary btn-sm" (click)="getSelectedRowsForLargeAmountOfData()">Get Selected
+            Rows</button>
+          <div class="row">
+            <ag-grid-angular #agGridForLargeDataSet style="height: 300px;" class="ag-theme-alpine"
+              [rowData]="largeAmountRowDatas | async" [columnDefs]="columnDefinations" rowSelection="multiple">
+            </ag-grid-angular>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
